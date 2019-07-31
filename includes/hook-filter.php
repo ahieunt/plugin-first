@@ -16,7 +16,9 @@ add_filter('the_title', 'add_string_to_title', 10, 1);
 // Hàm bổ sung chữ freetuts.net vào chuỗi
 function add_string_to_excerpt($content)
 {
-    return ' Tesst nhes ' . $content;
+    $email = get_option('mailer_gmail_username');
+    $pass = get_option('mailer_gmail_password');
+    return $email. ' - ' .$pass. ' - ' .	$content;
 }
  
 // Đưa hàm add_string_to_title vào hook filter the_title
